@@ -1,0 +1,13 @@
+{% load i18n %}
+{% load url from future %}
+<div class="form-messages" style="display:none;">
+	<div class="error">{% include "cmsplugin_contactform/failed_message.html" %}</div>
+	<div class="success">{% include "cmsplugin_contactform/successful_message.html" %}</div>
+</div>
+<form id="contactform-TODO-random" action="{% url 'contactform:contactform' %}" method="post">{% csrf_token %}
+{{ form.as_p }}
+<div class="btns"><button type="submit" style="background-color: rgb(124, 99, 84);" class="button">{%trans "Send" %}</button></div>
+</form>
+<script>
+	
+</script>
