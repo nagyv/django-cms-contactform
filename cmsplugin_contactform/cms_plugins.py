@@ -1,5 +1,5 @@
 import random
-from django.template import Context
+from sekizai.context import SekizaiContext
 from django.utils.translation import ugettext as _
 from cms.plugin_base import CMSPluginBase
 from cms.plugin_pool import plugin_pool
@@ -17,6 +17,7 @@ class ContactFormPlugin(CMSPluginBase):
         return SekizaiContext({
             'csrf_token': context['csrf_token'],
             'form': contactForm,
-            'form_id': 'contactform-' + str(random.random())
+            'form_id': 'contactform-' + str(random.random()),
+            'STATIC_URL': context['STATIC_URL']
             })
 plugin_pool.register_plugin(ContactFormPlugin)

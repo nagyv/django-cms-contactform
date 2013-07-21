@@ -7,4 +7,3 @@ from .models import Message
 class MessageCreateAPIView(CreateAPIView):
     form_class = ContactForm
     model = Message
-    template = 'cmsplugin_contactform/contactform.html'

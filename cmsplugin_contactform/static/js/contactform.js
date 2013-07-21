@@ -11,24 +11,26 @@ var contactForm = function(formID) {
     }
 
     function showError(data, textStatus, jqXHR){
-        var errorHolder = $('.form-messages .error');
-        var errorMessage = "Some error occured. Please try again later!"
+        var errorHolder = $('.error', currentForm);
         try{
             var responseJSON = JSON.parse(data.responseText);   
         } catch(e) {
-            responseJSON = '';
+            errorHolder.show();
         }
-        
-        errorHolder.empty();
 
-        if(data.status == 400){
-            errorMessage = "";
+        if(typeof responseJSON != 'undefined' && data.status == 400){
             for(var error in responseJSON) {
-               errorMessage += responseJSON[error][0]+'<br>';
+                //$('label.' + error).addClass('error');
+                errorHolder = $('label.' + error + ' .error', currentForm);
+                var errorMessage = "";
+                for(var message in responseJSON[error]) {
+                    errorMessage += responseJSON[error][message];
+                }
+                errorHolder.html(errorMessage);
+                errorHolder.show();
             }
         }
-
-        errorHolder.append(errorMessage);
+        $('button', currentForm).html(currentForm.original_value)
     }
 
     currentForm.addEventListener('submit', function(evt){

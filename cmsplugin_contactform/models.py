@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.core.validators import validate_email
 from django.core.mail import send_mail
 from django.db import models
@@ -35,14 +36,10 @@ def send_mails(sender, created, instance, **kwargs):
         send_mail(instance.subject, instance.message, instance.email, instance.group.forward_to.split(','), fail_silently=True)
 models.signals.post_save.connect(send_mails, sender=Message)
 
-try:
+if 'cms' in settings.INSTALLED_APPS:
     from cms.models import CMSPlugin
-
     class ContactFormPlugin(CMSPlugin):
         group = models.ForeignKey(Group, null=True, blank=True)
 
         def __unicode__(self):
             return self.group.name
-
-except ImportError:
-    pass
