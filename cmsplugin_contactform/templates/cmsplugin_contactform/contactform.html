@@ -20,40 +20,8 @@
     <textarea name='message' placeholder="Üzenet:"></textarea>
     <span class="error">*Túl rövid az üzenet, kérem fejtse ki bővebben.</span>
 </label>
-{% for fieldName, field in form.fields.items %}
-	<label class="{{fieldName}}">
-		{{field}}
-		<span class="error"></span>
-	</label>
-{% endfor %}
 <div class="btns"><button type="submit" style="background-color: rgb(124, 99, 84);" class="button">{%trans "Send" %}</button></div>
 </form>
-
-<!--form id="contact-form">
-    <fieldset>
-        <label class="name">
-            <input type="text" value="Név:">
-            <span class="error">*Érvénytelen név.</span>
-            <span class="empty">*A mező kitöltése kötelező.</span>
-        </label>
-        <label class="email">
-            <input type="text" value="E-mail:">
-            <span class="error">*Érvénytelen e-mail cím.</span>
-            <span class="empty">*A mező kitöltése kötelező.</span>
-        </label>
-        <label class="phone">
-            <input type="text" value="Telefonszám:">
-            <span class="error">*Érvénytelen telefonszám.</span>
-            <span class="empty">*A mező kitöltése kötelező.</span>
-        </label>
-        <label class="message">
-            <textarea>Üzenet:</textarea>
-            <span class="error">*Túl rövid az üzenet, kérem fejtse ki bővebben.</span>
-            <span class="empty">*A mező kitöltése kötelező.</span>
-        </label>
-        <div class="btns"><a class="button" data-type="reset">Töröl</a><a class="button" data-type="submit">Elküld</a></div>
-    </fieldset>
-</form-->
 
 <script src="{{STATIC_URL}}js/contactform.js"></script>
 <script>
