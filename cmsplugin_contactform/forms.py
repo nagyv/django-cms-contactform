@@ -1,5 +1,6 @@
 from django import forms
 from models import Message
+from django.utils.translation import ugettext as _
 
 
 class ContactForm(forms.ModelForm):
@@ -14,13 +15,14 @@ class ContactForm(forms.ModelForm):
         model = Message
         error_messages = {
             'name': {
-                'required': 'Please enter your name!',
+                'required': _('Please enter your name!'),
             },
             'email': {
-                'required': 'Please enter your email address!', 'invalid': 'The provided email address is invalid!',
+                'required': _('Please enter your email address!'), 
+                'invalid': _('The provided email address is invalid!'),
             },
-            'subject': {'required': 'Please enter a subject!'},
-            'message': {'required': "You didn't provide a message!"},
+            'subject': {'required': _('Please enter a subject!')},
+            'message': {'required': _("You didn't provide a message!")},
         }
         widgets = {
             'group': forms.HiddenInput

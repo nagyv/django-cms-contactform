@@ -7,20 +7,40 @@ msgid ""
 msgstr ""
 "Project-Id-Version: django cms contactform\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-07-25 00:42+0300\n"
-"PO-Revision-Date: 2013-07-25 01:01+0200\n"
+"POT-Creation-Date: 2013-07-25 01:20+0300\n"
+"PO-Revision-Date: 2013-07-25 01:20+0200\n"
 "Last-Translator: Viktor Nagy <viktor.nagy@gmail.com>\n"
 "Language-Team: Hungarian <LL@li.org>\n"
+"Language: Hungarian\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 1.5.7\n"
-"Language: Hungarian\n"
 
 #: cms_plugins.py:12
 msgid "Contact Form"
 msgstr "Kapcsolat űrlap"
+
+#: forms.py:18
+msgid "Please enter your name!"
+msgstr "Kérem, adja meg a nevét!"
+
+#: forms.py:21
+msgid "Please enter your email address!"
+msgstr "Kérem, adjon meg egy érvényes e-mailcímet!"
+
+#: forms.py:22
+msgid "The provided email address is invalid!"
+msgstr "A megadott e-mailcím érvénytelen!"
+
+#: forms.py:24
+msgid "Please enter a subject!"
+msgstr "Kérem adjon meg egy tárgyat!"
+
+#: forms.py:25
+msgid "You didn't provide a message!"
+msgstr "Nem írt üzenetet!"
 
 #: models.py:25
 msgid "Name"
@@ -37,6 +57,18 @@ msgstr "Tárgy"
 #: models.py:28
 msgid "Message"
 msgstr "Üzenet"
+
+#: templates/cmsplugin_contactform/contactform.html:8
+msgid "Name:"
+msgstr "Név:"
+
+#: templates/cmsplugin_contactform/contactform.html:12
+msgid "E-mail:"
+msgstr "E-mail:"
+
+#: templates/cmsplugin_contactform/contactform.html:16
+msgid "Subject:"
+msgstr "Tárgy:"
 
 #: templates/cmsplugin_contactform/contactform.html:23
 msgid "Send"
