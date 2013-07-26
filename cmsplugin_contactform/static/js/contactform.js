@@ -3,7 +3,7 @@ var contactForm = function(formID) {
     //var this.successMessage = document.querySelector('.form-messages .success');
 
     function messageSentDone(){
-        $('button', currentForm).html(document.querySelector('.form-messages .success').innerHTML)
+        $('button', currentForm).html($('.success', currentForm).innerHTML)
         window.setTimeout(function(){
             currentForm.reset();
             $('button', currentForm).html(currentForm.original_value)
