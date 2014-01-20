@@ -1,7 +1,7 @@
 from django.conf.urls import patterns, url
-from .views import MessageCreateAPIView
+from .views import contact_view
 
 
 urlpatterns = patterns('contactform',
-    url(r'$', MessageCreateAPIView.as_view(), name='contactform'),
+    url(r'$', contact_view, name='contactform'),
 )
