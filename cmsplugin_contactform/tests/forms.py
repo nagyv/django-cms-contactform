@@ -12,7 +12,6 @@ class ContactFormTest(TestCase):
             'subject': 'subject',
             'message': 'message'
             })
-        import ipdb; ipdb.set_trace()
         self.assertTrue(form.is_valid())
 
     def test_with_group(self):

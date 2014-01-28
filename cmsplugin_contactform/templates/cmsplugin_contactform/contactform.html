@@ -17,9 +17,10 @@
     <span class="error"></span>
 </label>
 <label class="message">
-    <textarea name='message' placeholder="Üzenet:"></textarea>
+    <textarea name='message' placeholder="{% trans "Message" %}"></textarea>
     <span class="error"></span>
 </label>
+{{form.group}}
 <div class="btns"><button type="submit" style="background-color: rgb(124, 99, 84);" class="button">{%trans "Send" %}</button></div>
 </form>
 
